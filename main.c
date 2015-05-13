@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
 
 char Jeu_classique(char *Ab,char *Aprimb,char *Dprimb,char *Db,char *Gb,char *Gprimb,char *dessusb,char *dessusprimb,char *dessousb,char *dessousprimb,char *dosb,char *dosprimb);
 void algo_de_reso(char *Ac);
@@ -49,7 +48,7 @@ int main()
     printf("Selectionne le mode de jeu a=Jeu classique b= mode auto \n");
     while(mode==0)
     {
-        mode=getch();
+        mode=getchar();
         switch(mode)
         {
          case 'b':
@@ -96,7 +95,7 @@ char Jeu_classique(char *Ab,char *Aprimb,char *Dprimb,char *Db,char *Gb,char *Gp
 
 
 
-            cas=getch();
+            cas=getchar();
                switch(cas)
             {
                 case 'a':
