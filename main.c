@@ -1,10 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "utils.h"
+
 
 char Jeu_classique(char *Ab,char *Aprimb,char *Dprimb,char *Db,char *Gb,char *Gprimb,char *dessusb,char *dessusprimb,char *dessousb,char *dessousprimb,char *dosb,char *dosprimb);
 void algo_de_reso(char *Ac);
 
-int main()
+void cls()
+{
+  system(CLEAN_SCREEN);
+}
+
+void menu()
 {
     char A[4]={'a','z','e','r'};
     char dessus[4]={0};
@@ -40,36 +47,22 @@ int main()
     dessous[3]=dos[3];
 
 
-
-    //fin=Jeu_classique(&A,&Aprim,&Dprim,&D,&G,&Gprim,&dessus,&dessusprim,&dessous,&dessousprim,&dos,&dosprim)
-
-
-    printf("Hello world!\n");
-    printf("Selectionne le mode de jeu a=Jeu classique b= mode auto \n");
-    while(mode==0)
+  printf("Hello world!\n");
+  printf("Selectionne le mode de jeu a=Jeu classique b= mode auto \n");
+  while(mode==0)
     {
-        mode=getchar();
-        switch(mode)
+      mode=getchar();
+      switch(mode)
         {
-         case 'b':
-            algo_de_reso(A);
-         break;
-         case 'a':
-
-            while(Jeu_classique(A,Aprim,Dprim,D,G,Gprim,dessus,dessusprim,dessous,dessousprim,dos,dosprim)==0);
-         break;
-
+	case 'b':
+	  algo_de_reso(A);
+	  break;
+	case 'a':
+	  while(Jeu_classique(A,Aprim,Dprim,D,G,Gprim,dessus,dessusprim,dessous,dessousprim,dos,dosprim)==0);
+	  break;
         }
     }
-
-    //printf("%c %c \n",A[0],A[1]);
-    //printf("%c %c \n",A[2],A[3]);
-
-
-
-    printf("Appuyer sur une touche pour sortir de la boucle");
-
-    return 0;
+  printf("Appuyer sur une touche pour sortir de la boucle");
 }
 
 void algo_de_reso(char *A)
@@ -92,51 +85,48 @@ char Jeu_classique(char *Ab,char *Aprimb,char *Dprimb,char *Db,char *Gb,char *Gp
     char face=0;
      while(end==0)
      {
-
-
-
             cas=getchar();
                switch(cas)
             {
                 case 'a':
-                    system("cls");
+		  cls();
                     printf("%c %c \n",Ab[0],Ab[1]);
                     printf("%c %c \n",Ab[2],Ab[3]);
                     face=1;
                     break;
                 case 'z':
-                    system("cls");
+                    cls();
                     printf("%c %c \n",dessusb[0],dessusb[1]);
                     printf("%c %c \n",dessusb[2],dessusb[3]);
                     face=4;
                     break;
                 case 'q':
-                    system("cls");
+                    cls();
                     printf("%c %c \n",Gb[0],Gb[1]);
                     printf("%c %c \n",Gb[2],Gb[3]);
                     face=3;
                     break;
                 case 'd':
-                    system("cls");
+                    cls();
                     printf("%c %c \n",Db[0],Db[1]);
                     printf("%c %c \n",Db[2],Db[3]);
                     face=2;
                     break;
                 case 's':
-                    system("cls");
+                    cls();
                     printf("%c %c \n",dessousb[0],dessousb[1]);
                     printf("%c %c \n",dessousb[2],dessousb[3]);
                     face=5;
                     break;
                 case 'e':
-                    system("cls");
+                    cls();
                     printf("%c %c \n",dosb[0],dosb[1]);
                     printf("%c %c \n",dosb[2],dosb[3]);
                     face=6;
 
                     break;
                  case 't':
-                     system("cls");
+                     cls();
                      printf("     %c %c       |\n",dessusb[0],dessusb[1]);
                      printf("     %c %c       |\n               |\n",dessusb[2],dessusb[3]);
                      printf("%c %c  %c %c  %c %c  |    %c %c \n",Gb[0],Gb[1],Ab[0],Ab[1],Db[0],Db[1],dosb[0],dosb[1]);
@@ -436,4 +426,11 @@ char Jeu_classique(char *Ab,char *Aprimb,char *Dprimb,char *Db,char *Gb,char *Gp
 
      }
     return end;
+}
+
+int main()
+{
+  menu();
+  //fin=Jeu_classique(&A,&Aprim,&Dprim,&D,&G,&Gprim,&dessus,&dessusprim,&dessous,&dessousprim,&dos,&dosprim)
+  return 0;
 }
