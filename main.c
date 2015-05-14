@@ -6,21 +6,41 @@
 char Jeu_classique(char *Ab,char *Aprimb,char *Dprimb,char *Db,char *Gb,char *Gprimb,char *dessusb,char *dessusprimb,char *dessousb,char *dessousprimb,char *dosb,char *dosprimb);
 void algo_de_reso(char *Ac);
 
-void menu()
+void		initRubiks(t_rubiks *rub)
 {
-    char A[4]={'a','z','e','r'};
-    char dessus[4]={0};
-    char D[4]={0};
-    char G[4]={0};
-    char dos[4]={'t','y','u','i'};
-    char dessous[4]={0};
-    char Aprim[4]={'a','z','e','r'};
-    char dessusprim[4]={0};
-    char Dprim[4]={0};
-    char Gprim[4]={0};
-    char dosprim[4]={0};
-    char dessousprim[4]={0};
-    char mode=0;
+  rub->A[0] = 'a';
+  rub->A[1] = 'z';
+  rub->A[2] = 'e';
+  rub->A[3] = 'r';
+  rub->dessus[0] = '\0';
+  rub->D[4] = '\0';
+  rub->G[4] = '\0';
+  rub->dos[0] = 't';
+  rub->dos[1] = 'y';
+  rub->dos[2] = 'u';
+  rub->dos[3] = 'i';
+  rub->dessous[0] = '\0';
+}
+
+void		menu()
+{
+  char A[4]={'a','z','e','r'};
+  char dessus[4]={0};
+  char D[4]={0};
+  char G[4]={0};
+  char dos[4]={'t','y','u','i'};
+  char dessous[4]={0};
+
+  char Aprim[4]={'a','z','e','r'};
+  char dessusprim[4]={0};
+  char Dprim[4]={0};
+  char Gprim[4]={0};
+  char dosprim[4]={0};
+  char dessousprim[4]={0};
+  char mode=0;
+
+  t_rubiks rub;
+  initRubiks(&rub);
 
     //char fin=10;
 
@@ -190,7 +210,7 @@ char Jeu_classique(char *Ab,char *Aprimb,char *Dprimb,char *Db,char *Gb,char *Gp
 		printf("%c %c \n",Ab[0],Ab[1]);
 		printf("%c %c \n",Ab[2],Ab[3]);
 	      }
-
+	    
 	    if (face==2)// sens horaire face droite
 	      {
 		printf("Appui de la fleche de gauche\n");

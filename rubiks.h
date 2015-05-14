@@ -18,6 +18,16 @@ enum CMD
     DISPLAY = 't'
   };
 
+typedef	struct	s_rubiks
+{
+  char A[4];
+  char dessus[4];
+  char D[4];
+  char G[4];
+  char dos[4];
+  char dessous[4];
+}		t_rubiks;
+
 /********************************/
 /*		FACE		*/
 /********************************/
