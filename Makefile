@@ -4,7 +4,8 @@ RM	=	rm -f
 
 CFLAGS	=	-W -Wall -Werror
 
-SRCS	=	main.c
+SRCS	=	utils.c \
+		main.c
 
 OBJS	=	$(SRCS:.c=.o)
 

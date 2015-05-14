@@ -7,4 +7,6 @@
 # define CLEAN_SCREEN "clear"
 #endif
 
+void cls();
+
 #endif

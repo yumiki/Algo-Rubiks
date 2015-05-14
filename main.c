@@ -2,14 +2,8 @@
 #include <stdlib.h>
 #include "utils.h"
 
-
 char Jeu_classique(char *Ab,char *Aprimb,char *Dprimb,char *Db,char *Gb,char *Gprimb,char *dessusb,char *dessusprimb,char *dessousb,char *dessousprimb,char *dosb,char *dosprimb);
 void algo_de_reso(char *Ac);
-
-void cls()
-{
-  system(CLEAN_SCREEN);
-}
 
 void menu()
 {
